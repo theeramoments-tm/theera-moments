@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b403c">
+  <meta name="description" content="Theera Moments — event planning, wedding décor, corporate events, private celebrations, production and artist management in Hyderabad.">
+  <title>Theera Moments — Events, Designed With Feeling</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --green-950: #062f2c;
+      --green-900: #0b403c;
+      --green-800: #10504b;
+      --green-700: #17645d;
+      --cream: #f4efe6;
+      --cream-2: #ebe3d5;
+      --paper: #fbf8f1;
+      --sand: #d8c5a0;
+      --gold: #b9955b;
+      --ink: #1c2927;
+      --muted: #6d7773;
+      --line: rgba(28, 41, 39, .12);
+      --white-line: rgba(255,255,255,.16);
+      --shadow: 0 28px 70px rgba(5, 29, 27, .12);
+      --radius: 24px;
+      --serif: "Cormorant Garamond", Georgia, serif;
+      --sans: "DM Sans", Inter, Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: var(--sans);
+      background: var(--paper);
+      color: var(--ink);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    img { display: block; width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button, input, select, textarea { font: inherit; }
+    button { cursor: pointer; }
+
+    .container { width: min(1240px, 88%); margin-inline: auto; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-transform: uppercase;
+      letter-spacing: .22em;
+      font-size: 10px;
+      font-weight: 700;
+    }
+    .eyebrow::before {
+      content: "";
+      display: block;
+      width: 34px;
+      height: 1px;
+      background: currentColor;
+    }
+
+    /* NAV */
+    .site-nav {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 1000;
+      padding: 20px 0;
+      color: #fff;
+      transition: background .35s ease, padding .35s ease, box-shadow .35s ease;
+    }
+    .site-nav.scrolled {
+      background: rgba(6, 47, 44, .94);
+      backdrop-filter: blur(18px);
+      padding: 13px 0;
+      box-shadow: 0 10px 40px rgba(0,0,0,.16);
+    }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 30px; }
+    .brand { line-height: 1; }
+    .brand-name { font-family: var(--serif); font-size: 28px; font-weight: 600; letter-spacing: .02em; }
+    .brand-tag { display: block; margin-top: 5px; font-size: 8px; font-weight: 700; letter-spacing: .32em; text-transform: uppercase; opacity: .7; text-align: center; }
+    .nav-links { display: flex; align-items: center; gap: 30px; font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; }
+    .nav-links a { position: relative; opacity: .92; }
+    .nav-links a::after { content: ""; position: absolute; left: 0; bottom: -7px; width: 0; height: 1px; background: var(--sand); transition: width .25s ease; }
+    .nav-links a:hover::after { width: 100%; }
+    .nav-cta { padding: 11px 17px; border: 1px solid rgba(255,255,255,.38); border-radius: 999px; font-size: 10px; letter-spacing: .16em; text-transform: uppercase; transition: .25s ease; }
+    .nav-cta:hover { background: var(--sand); color: var(--green-950); border-color: var(--sand); }
+    .mobile-nav-cta {
+    display: none;
+}
+
+@media (max-width: 900px) {
+
+    .site-nav.menu-open .mobile-nav-cta {
+        display: flex;
+        width: 100%;
+        box-sizing: border-box;
+        justify-content: center;
+        align-items: center;
+        padding: 13px 16px;
+        margin-top: 4px;
+        background: var(--sand);
+        color: var(--green-950);
+        border-radius: 999px;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: .14em;
+        text-transform: uppercase;
+    }
+
+    .site-nav.menu-open .nav-cta {
+        display: none;
+    }
+
+}
+    .menu-btn { display: none; width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(255,255,255,.3); background: transparent; color: #fff; font-size: 20px; }
+
+    /* HERO */
+    .hero {
+      min-height: 100svh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      isolation: isolate;
+      overflow: hidden;
+      color: #fff;
+      background:
+    linear-gradient(
+      90deg,
+      rgba(3, 29, 27, .86) 0%,
+      rgba(3, 29, 27, .68) 45%,
+      rgba(3, 29, 27, .24) 100%
+    ),
+    url('https://uploads.onecompiler.io/4558pqe67/4558qexbw/WhatsApp%20Image%202026-10-05%20at%2011.17.07.jpeg');
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+    .hero-content { width: min(920px, 88%); padding-top: 80px; }
+    .hero .eyebrow { color: var(--sand); margin-bottom: 24px; }
+    h1, h2, h3, blockquote { font-family: var(--serif); }
+    h1 { max-width: 920px; margin: 0; font-size: clamp(58px, 9vw, 126px); line-height: .84; font-weight: 500; letter-spacing: -.035em; }
+    .hero-sub { max-width: 600px; margin: 30px 0 32px; color: rgba(255,255,255,.85); font-size: 17px; }
+    .actions { display:flex; flex-wrap:wrap; gap: 12px; }
+    .btn { display:inline-flex; align-items:center; justify-content:center; gap:10px; min-height: 50px; padding: 0 21px; border-radius: 999px; font-size: 10px; font-weight: 700; letter-spacing: .16em; text-transform:uppercase; transition: transform .25s ease, background .25s ease, color .25s ease, border-color .25s ease; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { background: var(--sand); color: var(--green-950); }
+    .btn-primary:hover { background: #eadabd; }
+    .btn-ghost { border:1px solid rgba(255,255,255,.4); color:#fff; }
+    .btn-ghost:hover { border-color:#fff; background:rgba(255,255,255,.08); }
+    .hero-meta { position:absolute; right:6%; bottom:46px; display:flex; align-items:flex-end; gap:34px; color:rgba(255,255,255,.7); }
+    .hero-meta div { text-align:right; }
+    .meta-label { display:block; font-size:9px; text-transform:uppercase; letter-spacing:.16em; opacity:.7; margin-bottom:4px; }
+    .meta-value { font-size:13px; }
+    .scroll-note { position:absolute; left:6%; bottom:35px; display:flex; align-items:center; gap:12px; font-size:9px; text-transform:uppercase; letter-spacing:.18em; opacity:.7; }
+    .scroll-note span { width:56px; height:1px; background:rgba(255,255,255,.45); }
+
+    /* GENERAL */
+    section { padding: 120px 0; }
+    .section-head { display:flex; justify-content:space-between; align-items:flex-end; gap:50px; margin-bottom:58px; }
+    .section-head > div:first-child { flex: 1; }
+    h2 { margin: 0; color: var(--green-900); font-size: clamp(44px, 5.6vw, 78px); line-height:.96; font-weight:500; letter-spacing:-.025em; }
+    .section-intro { max-width: 470px; color: var(--muted); font-size: 15px; }
+    .dark { background: var(--green-900); color: #fff; }
+    .dark h2 { color:#fff; }
+    .dark .eyebrow { color: var(--sand); }
+
+    /* INTRO */
+    .intro-grid { display:grid; grid-template-columns: .9fr 1.1fr; gap: 95px; align-items:center; }
+    .intro-visual { position:relative; }
+    .intro-image { aspect-ratio: 4 / 5; object-fit: cover; border-radius: 190px 190px 12px 12px; box-shadow: var(--shadow); }
+    .intro-badge { position:absolute; right:-28px; bottom:28px; width:145px; height:145px; border-radius:50%; background:var(--sand); color:var(--green-950); display:grid; place-items:center; text-align:center; padding:22px; font-family:var(--serif); font-size:21px; line-height:1.05; transform:rotate(-8deg); box-shadow:0 18px 35px rgba(0,0,0,.14); }
+    .intro-copy .eyebrow { color: var(--green-700); margin-bottom:18px; }
+    .intro-copy h2 { margin-bottom:26px; }
+    .intro-copy p { max-width:620px; margin:0 0 20px; color:var(--muted); font-size:16px; }
+    .signature { margin-top:35px; color:var(--green-900); font-family:var(--serif); font-size:27px; font-style:italic; }
+
+    /* MARQUEE */
+    .marquee { overflow:hidden; border-top:1px solid var(--line); border-bottom:1px solid var(--line); background:var(--cream); }
+    .marquee-track { width:max-content; display:flex; gap:38px; align-items:center; padding:20px 0; animation: marquee 28s linear infinite; }
+    .marquee-item { display:flex; align-items:center; gap:38px; font-family:var(--serif); font-size:25px; color:var(--green-900); white-space:nowrap; }
+    .marquee-item::after { content:"✦"; font-family:Arial,sans-serif; font-size:10px; color:var(--gold); }
+    @keyframes marquee { to { transform:translateX(-50%); } }
+
+    /* SERVICES */
+    .services-intro { display:grid; grid-template-columns: 1fr .7fr; gap: 50px; align-items:end; }
+    .service-list { margin-top:65px; border-top:1px solid var(--white-line); }
+    .service { display:grid; grid-template-columns:70px 1fr auto; gap:25px; align-items:center; padding:28px 0; border-bottom:1px solid var(--white-line); transition: padding .3s ease; }
+    .service:hover { padding-left:12px; padding-right:12px; background:linear-gradient(90deg, rgba(255,255,255,.035), transparent); }
+    .service-num { color:var(--sand); font-size:10px; letter-spacing:.16em; }
+    .service h3 { margin:0; font-size:30px; font-weight:500; }
+    .service p { margin:4px 0 0; max-width:670px; color:rgba(255,255,255,.62); font-size:13px; }
+    .service-arrow { width:36px; height:36px; border:1px solid var(--white-line); border-radius:50%; display:grid; place-items:center; font-size:15px; transition:.25s; }
+    .service:hover .service-arrow { background:var(--sand); color:var(--green-950); border-color:var(--sand); transform:rotate(-45deg); }
+
+    /* WORK */
+    .work-grid { display:grid; grid-template-columns:1.15fr .85fr; gap:18px; }
+    .work-column { display:grid; gap:18px; }
+    .work-card { position:relative; overflow:hidden; min-height:280px; border-radius:18px; isolation:isolate; }
+    .work-card.tall { min-height:590px; }
+    .work-card img { position:absolute; inset:0; height:100%; object-fit:cover; transition:transform .7s cubic-bezier(.2,.6,.2,1); }
+    .work-card::after { content:""; position:absolute; inset:0; background:linear-gradient(180deg, transparent 35%, rgba(0,0,0,.72)); z-index:0; }
+    .work-card:hover img { transform:scale(1.055); }
+    .work-copy { position:absolute; left:25px; right:25px; bottom:23px; z-index:1; color:#fff; }
+    .work-copy small { display:block; margin-bottom:4px; color:var(--sand); text-transform:uppercase; letter-spacing:.16em; font-size:9px; font-weight:700; }
+    .work-copy h3 { margin:0; font-size:28px; font-weight:500; }
+
+    /* PROCESS */
+    .process { background:var(--cream); }
+    .process-grid { display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid var(--line); }
+    .process-card { padding:35px 28px 10px 0; border-right:1px solid var(--line); }
+    .process-card:not(:first-child) { padding-left:35px; }
+    .process-card:last-child { border-right:0; }
+    .process-no { font-family:var(--serif); font-size:55px; line-height:1; color:var(--green-700); }
+    .process-card h3 { margin:22px 0 8px; font-size:31px; font-weight:500; color:var(--green-900); }
+    .process-card p { margin:0; color:var(--muted); font-size:14px; max-width:330px; }
+
+    /* CONTACT */
+    .contact { background:var(--green-950); color:#fff; }
+    .contact-grid { display:grid; grid-template-columns:1.1fr .9fr; gap:90px; align-items:start; }
+    .contact h2 { color:#fff; max-width:700px; }
+    .contact-copy > p { max-width:560px; margin:25px 0 30px; color:rgba(255,255,255,.68); font-size:16px; }
+    .contact-links { display:flex; flex-wrap:wrap; gap:10px; }
+    .contact-card { padding:28px; border:1px solid var(--white-line); border-radius:18px; background:rgba(255,255,255,.035); }
+    .contact-card label { display:block; margin-bottom:8px; color:var(--sand); font-size:9px; text-transform:uppercase; letter-spacing:.18em; font-weight:700; }
+    .contact-card strong { font-size:15px; font-weight:500; }
+    .enquiry-form { display:grid; gap:13px; }
+    .field { width:100%; padding:14px 16px; border:1px solid rgba(255,255,255,.15); border-radius:10px; background:rgba(255,255,255,.055); color:#fff; outline:none; transition:border-color .2s ease, background .2s ease; }
+    .field::placeholder { color:rgba(255,255,255,.43); }
+    .field:focus { border-color:var(--sand); background:rgba(255,255,255,.075); }
+    textarea.field { min-height:120px; resize:vertical; }
+    select.field { color:rgba(255,255,255,.82); }
+    option { color:var(--ink); }
+    .form-note { margin:2px 0 0; color:rgba(255,255,255,.48); font-size:10px; }
+
+    /* FOOTER */
+    footer { padding:30px 0; background:#042320; color:rgba(255,255,255,.58); }
+    .footer-inner { display:flex; justify-content:space-between; gap:25px; align-items:center; }
+    .footer-brand { font-family:var(--serif); color:#fff; font-size:22px; }
+    .footer-copy { font-size:11px; }
+
+    /* REVEAL */
+    /* Content stays visible by default. Reveal animation is enabled only when JavaScript is available. */
+    .reveal { opacity:1; transform:none; }
+    .js-reveal .reveal { opacity:0; transform:translateY(24px); transition:opacity .8s ease, transform .8s ease; }
+    .js-reveal .reveal.visible { opacity:1; transform:none; }
+
+    /* MOBILE */
+    @media (max-width: 900px) {
+      .nav-links, .nav-cta { display:none; }
+      .menu-btn { display:block; }
+      .site-nav.menu-open { background:rgba(6,47,44,.98); backdrop-filter:blur(18px); }
+      .site-nav.menu-open .nav-links {
+        display:flex; position:absolute; left:6%; right:6%; top:76px; padding:22px; flex-direction:column; align-items:flex-start; gap:18px; border:1px solid rgba(255,255,255,.13); border-radius:16px; background:#0a3a36;
+      }
+      .site-nav.menu-open .nav-cta {
+    display: none !important;
+}
+      .hero-meta { display:none; }
+      .scroll-note { display:none; }
+      .intro-grid, .services-intro, .contact-grid { grid-template-columns:1fr; gap:50px; }
+      .intro-image { max-width:650px; }
+      .section-head { align-items:flex-start; flex-direction:column; gap:25px; }
+      .work-grid { grid-template-columns:1fr; }
+      .work-card.tall { min-height:520px; }
+      .process-grid { grid-template-columns:1fr; }
+      .process-card, .process-card:not(:first-child) { padding:30px 0; border-right:0; border-bottom:1px solid var(--line); }
+      .process-card:last-child { border-bottom:0; }
+      .footer-inner { flex-direction:column; align-items:flex-start; }
+    }
+
+    @media (max-width: 560px) {
+      .container { width:88%; }
+      section { padding:85px 0; }
+      h1 { font-size:clamp(51px, 18vw, 78px); }
+      h2 { font-size:clamp(43px, 13vw, 58px); }
+      .hero-content { padding-top:45px; }
+      .hero-sub { font-size:15px; }
+      .actions .btn { width:100%; }
+      .intro-badge { width:120px; height:120px; right:-5px; font-size:18px; }
+      .service { grid-template-columns:45px 1fr; gap:12px; }
+      .service-arrow { display:none; }
+      .service h3 { font-size:26px; }
+      .marquee-item { font-size:21px; }
+      .work-card, .work-card.tall { min-height:380px; }
+      .contact-grid { gap:35px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior:auto; }
+      *, *::before, *::after { animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; }
+      .reveal { opacity:1; transform:none; }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="site-nav" id="siteNav" aria-label="Main navigation">
+    <div class="container nav-inner">
+      <a class="brand" href="#top" aria-label="Theera Moments home">
+        <span class="brand-name">THEERA</span>
+        <span class="brand-tag">Moments</span>
+      </a>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#work">Portfolio</a>
+        <a href="#process">Approach</a>
+        <a href="#contact">Contact</a>
+        <a class="mobile-nav-cta" href="#contact">Plan Your Event ↗</a>
+      </div>
+
+      <a class="nav-cta" href="#contact">Plan Your Event</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">☰</button>
+    </div>
+  </nav>
+
+  <main id="top">
+    <header class="hero">
+      <div class="container">
+        <div class="hero-content reveal">
+          <div class="eyebrow">Event Experiences • Hyderabad</div>
+          <h1>Where every celebration finds its shore.</h1>
+          <p class="hero-sub">Weddings, private celebrations, corporate events and immersive productions — thoughtfully designed from first idea to final spotlight.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#contact">Plan Your Event ↗</a>
+            <a class="btn btn-ghost" href="#work">Explore Our Work</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-meta" aria-hidden="true">
+        <div><span class="meta-label">Based in</span><span class="meta-value">Hyderabad</span></div>
+        <div><span class="meta-label">For</span><span class="meta-value">Celebrations & Experiences</span></div>
+      </div>
+      <div class="scroll-note" aria-hidden="true"><span></span>Scroll to explore</div>
+    </header>
+
+    <section id="about">
+      <div class="container intro-grid">
+        <div class="intro-visual reveal">
+          <img class="intro-image" src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1200&q=88" alt="Elegant wedding table setting with floral details" loading="lazy">
+          <div class="intro-badge">Your moment.<br>Our craft.</div>
+        </div>
+
+        <div class="intro-copy reveal">
+          <div class="eyebrow">Theera Moments</div>
+          <h2>Beautiful moments.<br>Seamlessly produced.</h2>
+          <p>From the first conversation to the final guest leaving, every celebration deserves a clear vision, beautiful details and calm execution.</p>
+          <p>We bring creative direction, décor, production and event execution together so your event feels intentional, personal and memorable.</p>
+          <div class="signature">Designed with feeling.</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="marquee" aria-label="Theera Moments services">
+      <div class="marquee-track">
+        <div class="marquee-item">Weddings</div><div class="marquee-item">Corporate Events</div><div class="marquee-item">Private Celebrations</div><div class="marquee-item">Production</div><div class="marquee-item">Themed Décor</div><div class="marquee-item">Artist Management</div>
+        <div class="marquee-item">Weddings</div><div class="marquee-item">Corporate Events</div><div class="marquee-item">Private Celebrations</div><div class="marquee-item">Production</div><div class="marquee-item">Themed Décor</div><div class="marquee-item">Artist Management</div>
+      </div>
+    </div>
+
+    <section id="services" class="dark">
+      <div class="container">
+        <div class="services-intro">
+          <div class="reveal">
+            <div class="eyebrow">What we create</div>
+            <h2>From intimate gatherings to grand productions.</h2>
+          </div>
+          <div class="section-intro reveal">A considered approach to planning, styling and production — shaped around the character of your event.</div>
+        </div>
+
+        <div class="service-list reveal">
+          <a class="service" href="#contact"><div class="service-num">01</div><div><h3>Weddings</h3><p>Planning, décor, themes and complete wedding-day execution.</p></div><div class="service-arrow">↗</div></a>
+          <a class="service" href="#contact"><div class="service-num">02</div><div><h3>Corporate</h3><p>Conferences, launches, annual celebrations and brand experiences.</p></div><div class="service-arrow">↗</div></a>
+          <a class="service" href="#contact"><div class="service-num">03</div><div><h3>Private Parties</h3><p>Birthdays, anniversaries and celebrations designed around you.</p></div><div class="service-arrow">↗</div></a>
+          <a class="service" href="#contact"><div class="service-num">04</div><div><h3>Production</h3><p>Stage, sound, lighting, special effects and immersive setups.</p></div><div class="service-arrow">↗</div></a>
+          <a class="service" href="#contact"><div class="service-num">05</div><div><h3>Themed Décor</h3><p>Concept-led styling, florals, lighting and atmosphere.</p></div><div class="service-arrow">↗</div></a>
+          <a class="service" href="#contact"><div class="service-num">06</div><div><h3>Artist Management</h3><p>DJs, live acts, performers and entertainment curation.</p></div><div class="service-arrow">↗</div></a>
+          <a class="service" href="#contact"><div class="service-num">07</div><div><h3>Photo & Film</h3><p>Photography and videography that preserve the feeling.</p></div><div class="service-arrow">↗</div></a>
+          <a class="service" href="#contact"><div class="service-num">08</div><div><h3>Custom Experiences</h3><p>Have an idea that doesn't fit a category? Let's shape it together.</p></div><div class="service-arrow">↗</div></a>
+        </div>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="eyebrow" style="color:var(--green-700);margin-bottom:18px;">The aesthetic</div>
+            <h2>Designed to be remembered.</h2>
+          </div>
+          <div class="section-intro">The visual language can change with every celebration — but the attention to detail stays constant.</div>
+        </div>
+
+        <div class="work-grid">
+          <a class="work-card tall reveal" href="#contact">
+            <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=1400&q=90" alt="Elegant outdoor wedding celebration" loading="lazy">
+            <div class="work-copy"><small>Weddings</small><h3>Celebrations with character</h3></div>
+          </a>
+          <div class="work-column">
+            <a class="work-card reveal" href="#contact">
+              <img src="https://images.unsplash.com/photo-1507504031003-b417219a0fde?auto=format&fit=crop&w=1100&q=90" alt="Wedding décor details" loading="lazy">
+              <div class="work-copy"><small>Décor</small><h3>Details that matter</h3></div>
+            </a>
+            <a class="work-card reveal" href="#contact">
+              <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1100&q=90" alt="Live event atmosphere with stage lighting" loading="lazy">
+              <div class="work-copy"><small>Production</small><h3>Energy that moves</h3></div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="process" class="process">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <div class="eyebrow" style="color:var(--green-700);margin-bottom:18px;">Our approach</div>
+            <h2>Simple process.<br>Strong execution.</h2>
+          </div>
+          <div class="section-intro">A focused three-step journey keeps the creative direction clear and the execution organised.</div>
+        </div>
+
+        <div class="process-grid reveal">
+          <article class="process-card"><div class="process-no">01</div><h3>Discover</h3><p>We understand your vision, audience, venue and event priorities.</p></article>
+          <article class="process-card"><div class="process-no">02</div><h3>Design</h3><p>We translate the brief into a visual concept, plan and production roadmap.</p></article>
+          <article class="process-card"><div class="process-no">03</div><h3>Deliver</h3><p>We manage the details and coordination so you can be present for the moment.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="container contact-grid">
+        <div class="contact-copy reveal">
+          <div class="eyebrow">Let's create something unforgettable</div>
+          <h2>Have an event in mind?</h2>
+          <p>Share a few details and start a conversation with Theera Moments. For a faster response, you can also reach us directly on WhatsApp.</p>
+          <div class="contact-links">
+            <a class="btn btn-primary" href="https://wa.me/916303741988?text=Hi%20Theera%20Moments%2C%20I%27d%20like%20to%20discuss%20an%20event." target="_blank" rel="noopener">WhatsApp Us ↗</a>
+            <a class="btn btn-ghost" href="mailto:theeramoments@gmail.com">Send an Enquiry</a>
+          </div>
+        </div>
+
+        <div class="contact-card reveal">
+          <form class="enquiry-form" id="enquiryForm">
+            <div>
+              <label for="name">Name</label>
+              <input class="field" id="name" name="name" placeholder="Your name" required>
+            </div>
+            <div>
+              <label for="eventType">Event type</label>
+              <select class="field" id="eventType" name="eventType" required>
+                <option value="" selected disabled>Select an event</option>
+                <option>Wedding</option>
+                <option>Corporate event</option>
+                <option>Private celebration</option>
+                <option>Production</option>
+                <option>Custom experience</option>
+              </select>
+            </div>
+            <div>
+              <label for="date">Event date</label>
+              <input class="field" id="date" name="date" type="date">
+            </div>
+            <div>
+              <label for="message">A little about it</label>
+              <textarea class="field" id="message" name="message" placeholder="Venue, city, guest count, theme or anything else you know so far..."></textarea>
+            </div>
+            <button class="btn btn-primary" type="submit">Continue on WhatsApp ↗</button>
+            <p class="form-note">This form opens WhatsApp with your details — no backend required.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-brand">THEERA Moments</div>
+      <div class="footer-copy">© 2026 Theera Moments. All rights reserved.</div>
+      <div class="footer-copy">Where every celebration finds its shore.</div>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('siteNav');
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+
+    function updateNav() {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    }
+    window.addEventListener('scroll', updateNav, { passive: true });
+    updateNav();
+
+    menuBtn.addEventListener('click', () => {
+      const open = nav.classList.toggle('menu-open');
+      menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      menuBtn.textContent = open ? '×' : '☰';
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('menu-open');
+        menuBtn.setAttribute('aria-expanded', 'false');
+        menuBtn.setAttribute('aria-label', 'Open menu');
+        menuBtn.textContent = '☰';
+      });
+    });
+
+    // Progressive enhancement: if scripts or IntersectionObserver are unavailable,
+    // all page content remains visible instead of being hidden.
+    if ('IntersectionObserver' in window) {
+      const revealElements = document.querySelectorAll('.reveal');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      document.documentElement.classList.add('js-reveal');
+      revealElements.forEach(el => observer.observe(el));
+    }
+
+    document.getElementById('enquiryForm').addEventListener('submit', (event) => {
+      event.preventDefault();
+      const form = new FormData(event.currentTarget);
+      const name = form.get('name');
+      const eventType = form.get('eventType');
+      const date = form.get('date') || 'Not decided yet';
+      const message = form.get('message') || 'No additional details yet';
+      const whatsappText = [
+        'Hi Theera Moments, I would like to discuss an event.',
+        `Name: ${name}`,
+        `Event: ${eventType}`,
+        `Date: ${date}`,
+        `Details: ${message}`
+      ].join('\n');
+      window.open(`https://wa.me/916303741988?text=${encodeURIComponent(whatsappText)}`, '_blank', 'noopener');
+    });
+  </script>
+</body>
+</html>
